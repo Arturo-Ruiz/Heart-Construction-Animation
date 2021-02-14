@@ -1,0 +1,129 @@
+body { margin: 0 }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+h1 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 4vw;
+}
+svg {
+  width: 25vw;
+  position: relative;
+  overflow: visible;
+  margin: 1vw;
+}
+
+.circleLeft {
+  fill: transparent;
+  stroke: #585858;
+  stroke-width: 0.5;
+  stroke-dasharray: 312;
+  stroke-dashoffset: 312;
+  transform-origin: 46px 58px;
+  animation: leftCircleAnim 6s infinite;
+  animation-timing-function: cubic-bezier(0.4, -0.03, 0.82, 0.42);
+  will-change: transform, stroke, stroke-dashoffset, opacity;
+}
+
+.circleRight {
+  fill: transparent;
+  stroke: #585858;
+  stroke-width: 0.5;
+  stroke-dasharray: 312;
+  stroke-dashoffset: 312;
+  transform-origin: 23px 36px;
+  animation: rightCircleAnim 6s infinite;
+  animation-timing-function: cubic-bezier(0.4, -0.03, 0.82, 0.42);
+  will-change: transform, stroke, stroke-dashoffset, opacity;
+}
+
+.rect {
+  fill: transparent;
+  stroke: #585858;
+  stroke-width: 0.5;
+  transform-origin: 45px 36px;
+  stroke-dasharray: 303;
+  stroke-dashoffset: 303;
+  animation: rectAnim 6s infinite;
+  animation-timing-function: cubic-bezier(0.4, -0.03, 0.82, 0.42);
+  will-change: transform, stroke, stroke-dashoffset, opacity;
+}
+
+.heart {
+  stroke-dasharray: 332;
+  stroke-dashoffset: 332;
+  stroke: #E21A39;
+  stroke-width: 0.5;
+  fill: transparent;
+  animation: heartAnim 6s infinite;
+  animation-timing-function: cubic-bezier(0.4, -0.03, 0.82, 0.42);
+  will-change: stroke, stroke-dashoffset, fill, opacity;
+}
+
+@keyframes rectAnim {
+  0% { stroke-dashoffset: 312; }
+  10% { stroke-dashoffset: 122; }
+  35% { transform: rotate(0deg); }
+  37% { stroke: #585858; }
+  45% { transform: rotate(-45deg); stroke: #e8e8e8; }
+  74% { opacity: 1 }
+  75% { opacity: 0 }
+  100% {
+    stroke-dashoffset: 122;
+    transform: rotate(-45deg);
+    stroke: #e8e8e8;
+    opacity: 0;
+  }
+}
+
+
+@keyframes leftCircleAnim {
+  10% { stroke-dashoffset: 312; }
+  25% { stroke-dashoffset: 122; transform: translateY(0); }
+  35% { transform: translateY(-22px); }
+  37% { stroke: #585858; }
+  45% { transform: translateY(-22px) rotate(-45deg); stroke: #e8e8e8; }
+  74% { opacity: 1 }
+  75% { opacity: 0 }
+  100% {
+    stroke-dashoffset: 122;
+    transform: translateY(-22px) rotate(-45deg);
+    stroke: #e8e8e8;
+    opacity: 0;
+  }
+}
+
+@keyframes rightCircleAnim {
+  10% { stroke-dashoffset: 312; }
+  25% { stroke-dashoffset: 122; transform: translateX(0); }
+  35% { transform: translateX(22px); }
+  37% { stroke: #585858; }
+  45% { transform: translateX(22px) rotate(-45deg); stroke: #e8e8e8; }
+  74% { opacity: 1 }
+  75% { opacity: 0 }
+  100% {
+    stroke-dashoffset: 122;
+    stroke: #e8e8e8;
+    transform: translateX(22px) rotate(-45deg);
+    opacity: 0
+  }
+}
+
+@keyframes heartAnim {
+  45% { stroke-dashoffset: 332; }
+  55% { stroke-dashoffset: 102; }
+  58% { fill: transparent; }
+  65% { fill: #E21A39; }
+  85% { opacity: 1; }
+  95% { opacity: 0; }
+  100% {
+    stroke-dashoffset: 102;
+    fill: #E21A39;
+    opacity: 0; 
+  }
+}
